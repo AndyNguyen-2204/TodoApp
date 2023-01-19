@@ -3,7 +3,7 @@ import React from 'react';
 import WelcomeScreen from "./Screen/WelcomeScreen/welcomeScreen"
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import TodoAddnew from "./Screen/TodoAddnew/TodoAdd"
 import {
   SafeAreaView,
   ScrollView,
@@ -22,6 +22,7 @@ function App(): JSX.Element {
   <Stack.Navigator initialRouteName="Welcome">
   <Stack.Screen name="Welcome" component={WelcomeScreen} options={{headerShown: false}} />
   <Stack.Screen name="Home" component={Home} />
+  <Stack.Screen name="Add new" component={TodoAddnew} />
   </Stack.Navigator>
 </NavigationContainer>
   );
