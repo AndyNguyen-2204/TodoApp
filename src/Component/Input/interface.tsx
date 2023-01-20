@@ -1,5 +1,6 @@
-export type TypeInput ={
-  placeholder:string;
-  classesInput?:any;
-  onChange?:any
+export type TypeInput = {
+  placeholder: string;
+  classesInput?: any;
+  onChange?: any,
+  value: string
 }
