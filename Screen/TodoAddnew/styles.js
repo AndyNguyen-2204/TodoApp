@@ -30,8 +30,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#C0C0C0',
-        position: "relative",
-        height: 35,
+        minHeight: 35,
         borderRadius: 5,
         marginTop: 10,
         width: 300,
@@ -39,10 +38,8 @@ export const styles = StyleSheet.create({
         zIndex: 4
     },
     wrapValueDropdown: {
-        position: "absolute",
-        top: 0,
-        width: "100%",
-        zIndex: 4
+        width: 300,
+        alignSelf:"center",
     },
     wrapButton: {
         flexDirection: "row",

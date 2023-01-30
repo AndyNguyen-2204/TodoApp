@@ -37,13 +37,15 @@ const Dropdown: FC<Props> = ({ label, data, value, name, setName, setValue, clas
   };
 
   return (
+   <>
     <TouchableOpacity
       style={[classDropdown, visible ? styles.active : ""]}
       onPress={toggleDropdown}
     >
-      {renderDropdown()}
       <Text style={styles.buttonText}>{name === "" ? label : name}</Text>
     </TouchableOpacity>
+     {renderDropdown()}
+   </>
   );
 }
 
@@ -54,11 +56,10 @@ const styles = StyleSheet.create({
   },
   active: {
     borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0
+    borderBottomRightRadius: 0,
   },
   dropdown: {
     backgroundColor: '#fff',
-    top: 35,
     fontSize: 13,
     lineHeight: 20,
     width: "100%",
