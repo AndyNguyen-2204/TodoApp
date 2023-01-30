@@ -9,17 +9,13 @@ const ListTodo: React.FC<ListTodos> = ({
 
 }) => {
   const listTodo = useSelector((state: any) => state.TodoList.data)
-  let checkboxTodo: string[] = []
+  const [checkboxTodo, setCheckboxTodo] = useState<string[]>([])
 
   const handleCheckTodo = (e: any) => {
-    console.log(e);
-    console.log(checkboxTodo);
     if (checkboxTodo.includes(e.name as never)) {
-      console.log(1);
-      checkboxTodo.splice(checkboxTodo.indexOf(e.name), 1);
+      setCheckboxTodo(checkboxTodo.filter((el: any) => el !== e.name))
     } else {
-      console.log(2);
-      checkboxTodo.push(e.name)
+      setCheckboxTodo([...checkboxTodo, e.name])
     }
   }
   const renderTodo = useMemo(() => {
@@ -28,7 +24,7 @@ const ListTodo: React.FC<ListTodos> = ({
         listTodo.map((e: any, index: number) =>
           <View key={index} style={styles.wrapTodoinner}>
             <TouchableOpacity onPress={() => handleCheckTodo(e)} style={styles.checkbox}>
-              <Text style={styles.checked}>{checkboxTodo.includes(e.name) ? "" : "X"}</Text>
+              <Text style={styles.checked}>{checkboxTodo.includes(e.name) ? "X" : ""}</Text>
             </TouchableOpacity>
             <View style={styles.wrapContent}>
               <Text style={styles.nameTodo}>
@@ -44,7 +40,7 @@ const ListTodo: React.FC<ListTodos> = ({
     } else {
       return null
     }
-  }, [listTodo])
+  }, [listTodo, checkboxTodo])
   return (
     <SafeAreaView style={styles.wrapListTodoScreen}>
       <Text style={styles.titleScreen}>Danh sách công việc cần làm</Text>
