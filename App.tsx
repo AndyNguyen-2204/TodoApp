@@ -16,15 +16,16 @@ function App(): JSX.Element {
   const Stack = createNativeStackNavigator();
   const Tab = createBottomTabNavigator();
   return (
-   <Provider store={store}>
-    <NavigationContainer>
-  <Stack.Navigator initialRouteName="Welcome">
-  <Stack.Screen name="Welcome" component={WelcomeScreen} options={{headerShown: false}} />
-  <Stack.Screen name="Home" component={Home} />
-  <Stack.Screen name="Add new" component={TodoAddnew} />
-  </Stack.Navigator>
-</NavigationContainer>
-   </Provider>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Welcome">
+          <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Add new" component={TodoAddnew} />
+          <Stack.Screen name="ListTodo" component={ListTodo} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
