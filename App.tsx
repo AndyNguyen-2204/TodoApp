@@ -7,10 +7,9 @@ import TodoAddnew from "./Screen/TodoAddnew/TodoAdd"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { store } from './Redux/store'
 import { Provider } from 'react-redux'
-import {
-} from 'react-native';
 import Home from './Screen/Home/Home';
 import ListTodo from './Screen/ListTodo/listTodo';
+import Modal from './src/Component/Modal/modal';
 
 function App(): JSX.Element {
   const Stack = createNativeStackNavigator();

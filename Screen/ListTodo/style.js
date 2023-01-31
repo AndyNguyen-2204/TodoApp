@@ -1,17 +1,36 @@
 import { StyleSheet } from "react-native"
 export const styles = StyleSheet.create({
     wrapListTodoScreen: {
-        backgroundColor: "#000000",
+        backgroundColor: "#F5F5F5",
         height: "100%",
         width: "100%",
         paddingHorizontal: 15
     },
     titleScreen: {
         fontSize: 25,
-        color: "#ffffff",
+        color: "#000000",
         alignSelf: "center",
-        fontWeight: "600",
-        marginTop: 20
+        fontWeight: "500",
+        marginBottom:20,
+        marginTop:30,
+        zIndex:3
+    },
+    dropdown: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent:"center",
+        backgroundColor: '#C0C0C0',
+        minHeight: 35,
+        borderRadius: 5,
+        marginBottom: 20,
+        width: 300,
+        alignSelf: "center",
+        zIndex: 4,
+        gap:5
+    },
+    wrapValueDropdown: {
+        width: 300,
+        alignSelf:"center",
     },
     wrapTodo: {
     },
@@ -21,7 +40,7 @@ export const styles = StyleSheet.create({
         paddingVertical: 17,
         paddingHorizontal: 10,
         alignItems: "center",
-        backgroundColor: "#363636",
+        backgroundColor: "#555555",
         marginTop: 20,
         borderRadius: 10,
     },
@@ -32,17 +51,104 @@ export const styles = StyleSheet.create({
         height: 30,
         width: 30,
         borderColor: "#ffffff",
-        borderWidth: 1
+        borderWidth: 1,
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center"
     },
     checked: {
-        fontSize: 18,
-        color: "#ffffff",
-        alignSelf: "center",
     },
     nameTodo: {
         fontSize: 17,
         color: "#ffffff",
         width: "90%"
 
-    }
+    },
+    wrapButton:{
+        flexDirection:"row",
+        gap:10,
+        paddingVertical:20,
+        justifyContent:"center"
+    },
+    buttonCompleted:{
+        paddingHorizontal: 30,
+        paddingVertical: 10,
+        backgroundColor: "#55847A",
+        borderRadius: 5,
+        width:150
+    },
+    lablebtnComplete:{
+        fontFamily: 'Poppins',
+        fontStyle: "normal",
+        fontWeight: "500",
+        fontSize: 18,
+        lineHeight: 22,
+        textAlign: "center",
+        color: "#ffffff",
+    },
+    buttonDelete:{
+        paddingHorizontal: 30,
+        paddingVertical: 10,
+        backgroundColor: "#696969",
+        borderRadius: 5,
+        width:150
+    },
+    lablebtnDelete:{
+        fontFamily: 'Poppins',
+        fontStyle: "normal",
+        fontWeight: "500",
+        fontSize: 18,
+        lineHeight: 22,
+        textAlign: "center",
+        color: "#ffffff",
+    },
+    type1:{
+        color:"#ff0000"
+    },
+    type2:{
+        color:"#ff4500"
+    },
+    type3:{
+        color:"#ffff00"
+    },
+    type4:{
+        color:"#9acd32"
+    },
+    type5:{
+        color:"#CC99FF"
+    },
+    wrapContentNullTodo:{
+        height:"70%",
+        flexDirection:"column",
+        justifyContent:"center"
+    },
+    button:{
+        backgroundColor:"#55847A",
+        borderRadius:5,
+        flexDirection:"column",
+        justifyContent:"center",
+        margin:"auto",
+        alignSelf:"center",
+        marginTop:30,
+        paddingHorizontal:40,
+        paddingVertical:15,
+      },
+    lableButton:{
+        fontFamily:'Poppins',
+        fontStyle:"normal",
+        fontWeight:"500",
+        fontSize:18,
+        lineHeight:22,
+        textAlign:"center",
+        color:"#ffffff"
+      },
+    nameNullTodo: {
+        fontSize: 20,
+        color: "#000000",
+        width: "100%",
+        alignSelf:"center",
+        textAlign:"center",
+        fontWeight:"500",
+        fontFamily:'Poppins',
+    },
 })

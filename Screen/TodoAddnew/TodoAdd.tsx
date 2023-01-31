@@ -25,9 +25,11 @@ const TodoAdd: React.FC<TodoAddType> = ({
     if (name !== "" && value !== 0) {
       dispatch(addTodo({
         name: valueInput,
-        value
+        value,
+        status:"Processing"
       }))
       navigation.navigate("ListTodo")
+      clearState()
     } else {
 
     }

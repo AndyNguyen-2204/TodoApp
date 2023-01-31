@@ -2,5 +2,6 @@ export type TypeButton ={
   title:string;
   classesButton?:any;
   classLable?:any;
-  onpress?:any
+  onpress?:any,
+  icon?:any
 }

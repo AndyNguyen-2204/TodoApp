@@ -5,11 +5,13 @@ import {TypeButton} from "./interface"
     title,
     classesButton,
     classLable,
-    onpress
+    onpress,
+    icon
   })=>{
     return(
       <TouchableOpacity style={classesButton} onPress={()=>onpress()}>
         <Text style={classLable}>{title}</Text>
+        {icon}
       </TouchableOpacity>
     )
   }

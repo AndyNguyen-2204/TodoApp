@@ -52,7 +52,11 @@ export const styles=StyleSheet.create({
     margin:"auto",
     alignSelf:"center",
     marginTop:56,
-    borderRadius:5
+    borderRadius:5,
+    flexDirection:"row",
+    justifyContent:"center",
+    alignItems:"center",
+    gap:10
   },
   textbuttonGetStart:{
     fontFamily:'Poppins',

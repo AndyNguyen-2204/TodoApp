@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 15,
         height: "100%",
         width: "100%",
-        backgroundColor: "#F5F5F5"
+        backgroundColor: "#EEEEEE"
     },
     image: {
         alignSelf: "center",
@@ -23,19 +23,21 @@ export const styles = StyleSheet.create({
         fontSize: 13,
         lineHeight: 20,
         marginTop: 15,
-        alignSelf: "center"
+        alignSelf: "center",
 
     },
     dropdown: {
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent:"center",
         backgroundColor: '#C0C0C0',
         minHeight: 35,
         borderRadius: 5,
         marginTop: 10,
         width: 300,
         alignSelf: "center",
-        zIndex: 4
+        zIndex: 4,
+        gap:5
     },
     wrapValueDropdown: {
         width: 300,
