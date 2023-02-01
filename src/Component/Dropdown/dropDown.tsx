@@ -44,7 +44,7 @@ const Dropdown: FC<Props> = ({ label, data, value, name, setName, setValue, clas
     >
       <Text style={styles.buttonText}>{name === "" ? label : name}</Text>
       <Text style={styles.buttonText}>
-      {visible?<Icon name='angle-up' size={17} color="#000000"/>:<Icon name='angle-down' size={17} color="#000000"/>}
+      {visible?<Icon name='angle-up' size={17} color="#ffffff"/>:<Icon name='angle-down' size={17} color="#ffffff"/>}
       </Text>
     </TouchableOpacity>
      {renderDropdown()}
@@ -54,6 +54,13 @@ const Dropdown: FC<Props> = ({ label, data, value, name, setName, setValue, clas
 
 const styles = StyleSheet.create({
   buttonText: {
+    fontFamily: 'Poppins',
+        fontStyle: "normal",
+        fontWeight: "500",
+        fontSize: 15,
+        lineHeight: 22,
+        textAlign: "center",
+        color: "#ffffff",
   },
   active: {
     borderBottomLeftRadius: 0,

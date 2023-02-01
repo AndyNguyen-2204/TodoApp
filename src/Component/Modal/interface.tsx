@@ -1,4 +1,8 @@
 export type ModalType = {
    title?:string,
-   styleModal?:any
+   description?:string,
+   styleModal?:any,
+   type?:string,
+   handelCancel?:any,
+   handelOk?:any
 }

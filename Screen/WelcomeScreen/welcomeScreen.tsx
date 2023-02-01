@@ -18,7 +18,6 @@ function WelcomeScreen({navigation}:any): JSX.Element {
         <Text style={styles.content}>Get things done with Todo</Text>
         <Text style={styles.description}>Plan, organize, track, in one visual, collaborative space</Text>
       </View>
-      <Button title='Get started' classesButton={styles.buttonGetStart} classLable={styles.textbuttonGetStart} onpress={()=>{navigation.navigate("Home")}} icon={<Icon name='arrow-right' size={15} color="#ffffff"/>}></Button>
     </SafeAreaView>
   );
 }

@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent:"center",
-        backgroundColor: '#C0C0C0',
+        backgroundColor: '#55847A',
         minHeight: 35,
         borderRadius: 5,
         marginTop: 10,

@@ -22,6 +22,9 @@ const ListTodo: React.FC<ListTodos> = ({
   const [value, setValue] = useState(0);
   const [name, setName] = useState("")
   const [listTodo,setListTodo]=useState<any>()
+  const[showModalDelete,setShowModalDelete]=useState<Boolean>(false)
+  const[showModalNotiChooseTask,setModalNotiChooseTask]=useState<Boolean>(false)
+  const[showModalCompleted,setShowModalCompleted]=useState<Boolean>(false)
   const onChangeSearch = (text:string)=>{
       setSearchValue(text)
   }
@@ -35,10 +38,35 @@ const ListTodo: React.FC<ListTodos> = ({
   const handelCompletedTodo=()=>{
     dispatch(completedTodo(checkboxTodo))
     setCheckboxTodo([])
+    setShowModalCompleted(false)
   }
   const handelDeleteTodo=()=>{
     dispatch(deleteTodo(checkboxTodo))
     setCheckboxTodo([])
+    setShowModalDelete(false)
+  }
+  const handelCloseModalDele = () =>{
+    setShowModalDelete(false)
+  }
+  const handelCloseModalNotiChooseTask= () =>{
+    setModalNotiChooseTask(false)
+  }
+  const handelCloseModalCompleted= () =>{
+    setShowModalCompleted(false)
+  }
+  const handelActionDelete=()=>{
+    if(checkboxTodo.length===0){
+      setModalNotiChooseTask(true)
+    }else{
+      setShowModalDelete(true)
+    }
+  }
+  const handelActionCompleted=()=>{
+    if(checkboxTodo.length===0){
+      setModalNotiChooseTask(true)
+    }else{
+      setShowModalCompleted(true)
+    }
   }
   const renderTodo = useMemo(() => {
     if (listTodo?.length > 0) {
@@ -101,8 +129,8 @@ const ListTodo: React.FC<ListTodos> = ({
           {renderTodo}
         </View>
         <View style={styles.wrapButton}>
-        <Button title="Completed" classesButton={styles.buttonCompleted} classLable={styles.lablebtnComplete} onpress={handelCompletedTodo}/>
-        <Button title="Delete" classesButton={styles.buttonDelete} classLable={styles.lablebtnDelete} onpress={handelDeleteTodo}/>
+        <Button title="Completed" classesButton={styles.buttonCompleted} classLable={styles.lablebtnComplete} onpress={handelActionCompleted}/>
+        <Button title="Delete" classesButton={styles.buttonDelete} classLable={styles.lablebtnDelete} onpress={handelActionDelete}/>
         </View>
       </ScrollView>
       </>:<>
@@ -114,7 +142,9 @@ const ListTodo: React.FC<ListTodos> = ({
       </View>
       </>}
     </SafeAreaView>
-    <Modal/>
+    {showModalDelete && <Modal description="Bạn có chắc chắn muốn xóa công việc này ?" title="Delete task" handelCancel={handelCloseModalDele} handelOk={handelDeleteTodo}/>}
+    {showModalNotiChooseTask && <Modal description="Vui lòng tích chọn vào công việc" title="Notification" type="modalNoti" handelOk={handelCloseModalNotiChooseTask}/>}
+    {showModalCompleted && <Modal description="Bạn có chắc chắn hoàn thành công việc này ?" title="Completed task" handelCancel={handelCloseModalCompleted} handelOk={handelCompletedTodo}/>}
     </SafeAreaView>
   )
 }

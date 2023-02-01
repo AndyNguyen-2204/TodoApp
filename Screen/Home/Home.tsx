@@ -1,32 +1,47 @@
-import React from 'react'
-import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import React, { useMemo } from 'react'
+import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, ToastAndroid, ScrollView } from 'react-native'
 import { styles } from "./styles"
 import Button from '../../src/Component/Button/button'
 import { TypeHomeScreen } from "./interface"
+import Icon from 'react-native-vector-icons/FontAwesome'
+import {dataFilter} from "../TodoAddnew/dataStatusTodo"
+import BlockTaskk from '../../src/Component/BlockTask/blockTask'
+import {renderColorBlock} from "./helperFunction"
+import { useSelector } from 'react-redux'
 const Home: React.FC<TypeHomeScreen> = ({
   navigation
 }) => {
+    const listTodoSlice = useSelector((state: any) => state.TodoList.data)
+    function renderQuantityTypeTask (numberType:number){
+    if(numberType===1){
+      return listTodoSlice.filter((e:any)=>e.value === 1 && e.status==="Processing").length
+    }else if(numberType===2){
+      return listTodoSlice.filter((e:any)=>e.value === 2 && e.status==="Processing").length
+    }else if(numberType===3){
+      return listTodoSlice.filter((e:any)=>e.value === 3 && e.status==="Processing").length
+    }else if(numberType===4){
+      return listTodoSlice.filter((e:any)=>e.value === 4 && e.status==="Processing").length
+    }else if(numberType===5){
+      return listTodoSlice.filter((e:any)=>e.status === "Completed").length
+    }else if (numberType===6){
+      return listTodoSlice.length
+    }
+  }
+  const renderBlockTask =useMemo(()=>{
+    return (
+      dataFilter.map((el:any,index:number)=>
+    <BlockTaskk key={index} title={el.name} quantity={renderQuantityTypeTask(el.value)} styleBLock={renderColorBlock(el.value)}/>
+    )
+    )
+  },[listTodoSlice])
   return (
     <SafeAreaView style={styles.wrapHomeScreen}>
+      <ScrollView>
       <View style={styles.wrapAllcontent}>
-        <TouchableOpacity style={[styles.wrapbox, styles.firstBox]}>
-          <Text style={styles.content}>Quan trọng và khẩn cấp</Text>
-          <Text style={[styles.content, styles.number]}>5</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.wrapbox, styles.secondBox]}>
-          <Text style={styles.content}>Quan trọng nhưng không khẩn cấp</Text>
-          <Text style={[styles.content, styles.number]}>5</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.wrapbox, styles.thirdBox]}>
-          <Text style={styles.content}>Khẩn cấp nhưng không quan trọng</Text>
-          <Text style={[styles.content, styles.number]}>5</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.wrapbox, styles.fourthBox]}>
-          <Text style={styles.content}>Không khẩn cấp và không quan trọng</Text>
-          <Text style={[styles.content, styles.number]}>5</Text>
-        </TouchableOpacity>
+      {renderBlockTask}
       </View>
-      <Button title='Thêm công việc mới' classesButton={styles.button} classLable={styles.lableButton} onpress={() => { navigation.navigate("Add new") }} />
+      <Button title='Thêm công việc mới' classesButton={styles.button} classLable={styles.lableButton} onpress={() => { navigation.navigate("Add new") }} icon={<Icon name='plus' size={15} color="#ffffff"/>}/>
+      </ScrollView>
     </SafeAreaView>
   )
 }

@@ -5,7 +5,7 @@ export const styles=StyleSheet.create({
   wrapHomeScreen:{
     height:"100%",
     width:"100%",
-    backgroundColor:"#F5F5F5",
+    backgroundColor:"#EEEEEE",
     paddingHorizontal:16,
     flexDirection:"column",
     justifyContent:"center",
@@ -16,12 +16,12 @@ export const styles=StyleSheet.create({
     flexWrap:"wrap",
     gap:10,
     justifyContent:"center",
-    alignItems:"center"
+    alignItems:"center",
+    marginTop:20
   },
   wrapbox:{
-    height:150,
-    width:150,
-    borderRadius:100,
+    height:200,
+    width:"48%",
     display:"flex",
     justifyContent:"center",
     alignItems:"center",
@@ -33,41 +33,41 @@ export const styles=StyleSheet.create({
     },
     shadowOpacity: 0.34,
     shadowRadius: 6.27,
-    elevation: 10,
-    borderWidth:0.7,
+    elevation: 4,
+    borderTopLeftRadius:55,
+    borderTopRightRadius:35,
+    borderBottomLeftRadius:35,
+    borderBottomRightRadius:55
     },
-  firstBox:{
-    backgroundColor:"#ff0000"
-  },
-  secondBox:{
-    backgroundColor:"#ff4500"
-  },
-  thirdBox:{
-    backgroundColor:"#ffff00"
-  },
-  fourthBox:{
-    backgroundColor:"#9acd32"
-  },
-  content:{
-    fontFamily: 'Work Sans',
-    fontSize:14,
-    fontWeight:"700",
-    textAlign:"center"
-  },
-  number:{
-    fontSize:20,
-    marginTop:5
-  },
+    type1:{
+      backgroundColor:"#ff0000"
+    },
+    type2:{
+      backgroundColor:"#ff4500"
+    },
+    type3:{
+      backgroundColor:"#ffff00"
+    },
+    type4:{
+      backgroundColor:"#9acd32"
+    },
+    type5:{
+      backgroundColor:"#CC99FF"
+    },
+    type6:{
+      backgroundColor:"#FFFACD"
+    },
   button:{
     backgroundColor:"#55847A",
     borderRadius:5,
-    flexDirection:"column",
-    justifyContent:"center",
-    margin:"auto",
     alignSelf:"center",
-    marginTop:40,
     paddingHorizontal:40,
     paddingVertical:15,
+    flexDirection:"row",
+    gap:10,
+    alignItems:"center",
+    marginTop:20,
+    marginBottom:20
   },
   lableButton:{
     fontFamily:'Poppins',

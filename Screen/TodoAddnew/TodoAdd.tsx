@@ -9,6 +9,7 @@ import Button from "../../src/Component/Button/button";
 import { useDispatch, useSelector } from 'react-redux'
 import { addTodo } from '../../Redux/ListTodoSlice/listTodo'
 import { TodoAddType } from "./interface"
+import Modal from '../../src/Component/Modal/modal';
 const TodoAdd: React.FC<TodoAddType> = ({
   navigation
 }) => {
@@ -16,10 +17,14 @@ const TodoAdd: React.FC<TodoAddType> = ({
   const [name, setName] = useState("")
   const [valueInput, setValueInput] = useState("")
   const dispatch = useDispatch()
+  const[showModal,setShowModal]=useState<Boolean>(false)
   const clearState = () => {
     setValueInput("")
     setValue(0)
     setName("")
+  }
+  const handelCloseModal =()=>{
+      setShowModal(false)
   }
   const addNewTodo = () => {
     if (name !== "" && value !== 0) {
@@ -31,10 +36,11 @@ const TodoAdd: React.FC<TodoAddType> = ({
       navigation.navigate("ListTodo")
       clearState()
     } else {
-
+      setShowModal(true)
     }
   }
   return (
+    <>
     <SafeAreaView style={styles.wrapAddScreen}>
       <ImageBackgroundScreen />
       <View>
@@ -47,6 +53,8 @@ const TodoAdd: React.FC<TodoAddType> = ({
         <Button title="Clear" classesButton={styles.buttonClear} classLable={styles.labelbtnClear} onpress={clearState} />
       </View>
     </SafeAreaView>
+    {showModal && <Modal description="Vui lòng nhập công việc và chọn trạng thái công việc" title="Notification" type="modalNoti" handelOk={handelCloseModal}/>}
+    </>
   )
 }
 export default TodoAdd

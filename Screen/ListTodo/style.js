@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native"
 export const styles = StyleSheet.create({
     wrapListTodoScreen: {
-        backgroundColor: "#F5F5F5",
+        backgroundColor: "#EEEEEE",
         height: "100%",
         width: "100%",
         paddingHorizontal: 15
@@ -19,10 +19,9 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent:"center",
-        backgroundColor: '#C0C0C0',
+        backgroundColor: '#55847A',
         minHeight: 35,
         borderRadius: 5,
-        marginBottom: 20,
         width: 300,
         alignSelf: "center",
         zIndex: 4,

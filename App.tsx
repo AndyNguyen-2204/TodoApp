@@ -1,29 +1,18 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import WelcomeScreen from "./Screen/WelcomeScreen/welcomeScreen"
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TodoAddnew from "./Screen/TodoAddnew/TodoAdd"
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { store } from './Redux/store'
 import { Provider } from 'react-redux'
-import Home from './Screen/Home/Home';
-import ListTodo from './Screen/ListTodo/listTodo';
-import Modal from './src/Component/Modal/modal';
-
+import TabNavigate from "./Navigation/TabNavigate/tabNavigate"
 function App(): JSX.Element {
-  const Stack = createNativeStackNavigator();
-  const Tab = createBottomTabNavigator();
+  const [showWelcomeScreen,setShowWelcomeScreen]=useState<Boolean>(true)
+  setInterval(hideWelcomeScreen,2000)
+  function hideWelcomeScreen(){
+     setShowWelcomeScreen(false)
+  }
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="Welcome">
-          <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }} />
-          <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Add new" component={TodoAddnew} />
-          <Stack.Screen name="ListTodo" component={ListTodo} />
-        </Stack.Navigator>
-      </NavigationContainer>
+     {showWelcomeScreen? <WelcomeScreen/>: <TabNavigate/> }
     </Provider>
   );
 }
