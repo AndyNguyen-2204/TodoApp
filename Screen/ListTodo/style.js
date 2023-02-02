@@ -11,25 +11,25 @@ export const styles = StyleSheet.create({
         color: "#000000",
         alignSelf: "center",
         fontWeight: "500",
-        marginBottom:20,
-        marginTop:30,
-        zIndex:3
+        marginBottom: 20,
+        marginTop: 30,
+        zIndex: 3
     },
     dropdown: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent:"center",
+        justifyContent: "center",
         backgroundColor: '#55847A',
         minHeight: 35,
         borderRadius: 5,
         width: 300,
         alignSelf: "center",
         zIndex: 4,
-        gap:5
+        gap: 5
     },
     wrapValueDropdown: {
         width: 300,
-        alignSelf:"center",
+        alignSelf: "center",
     },
     wrapTodo: {
     },
@@ -51,32 +51,32 @@ export const styles = StyleSheet.create({
         width: 30,
         borderColor: "#ffffff",
         borderWidth: 1,
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center"
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
     },
     checked: {
     },
     nameTodo: {
         fontSize: 17,
         color: "#ffffff",
-        width: "90%"
-
+        width: "90%",
+        marginTop: 5
     },
-    wrapButton:{
-        flexDirection:"row",
-        gap:10,
-        paddingVertical:20,
-        justifyContent:"center"
+    wrapButton: {
+        flexDirection: "row",
+        gap: 10,
+        paddingVertical: 20,
+        justifyContent: "center"
     },
-    buttonCompleted:{
+    buttonCompleted: {
         paddingHorizontal: 30,
         paddingVertical: 10,
         backgroundColor: "#55847A",
         borderRadius: 5,
-        width:150
+        width: 150
     },
-    lablebtnComplete:{
+    lablebtnComplete: {
         fontFamily: 'Poppins',
         fontStyle: "normal",
         fontWeight: "500",
@@ -85,14 +85,14 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         color: "#ffffff",
     },
-    buttonDelete:{
+    buttonDelete: {
         paddingHorizontal: 30,
         paddingVertical: 10,
         backgroundColor: "#696969",
         borderRadius: 5,
-        width:150
+        width: 150
     },
-    lablebtnDelete:{
+    lablebtnDelete: {
         fontFamily: 'Poppins',
         fontStyle: "normal",
         fontWeight: "500",
@@ -101,60 +101,60 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         color: "#ffffff",
     },
-    type1:{
-        color:"#ff0000"
+    type1: {
+        color: "#ff0000"
     },
-    type2:{
-        color:"#ff4500"
+    type2: {
+        color: "#ff4500"
     },
-    type3:{
-        color:"#ffff00"
+    type3: {
+        color: "#ffff00"
     },
-    type4:{
-        color:"#9acd32"
+    type4: {
+        color: "#9acd32"
     },
-    type5:{
-        color:"#CC99FF"
+    type5: {
+        color: "#CC99FF"
     },
-    wrapContentNullTodo:{
-        height:"70%",
-        flexDirection:"column",
-        justifyContent:"center"
+    wrapContentNullTodo: {
+        height: "70%",
+        flexDirection: "column",
+        justifyContent: "center"
     },
-    button:{
-        backgroundColor:"#55847A",
-        borderRadius:5,
-        flexDirection:"column",
-        justifyContent:"center",
-        margin:"auto",
-        alignSelf:"center",
-        marginTop:30,
-        paddingHorizontal:40,
-        paddingVertical:15,
-      },
-    lableButton:{
-        fontFamily:'Poppins',
-        fontStyle:"normal",
-        fontWeight:"500",
-        fontSize:18,
-        lineHeight:22,
-        textAlign:"center",
-        color:"#ffffff"
-      },
+    button: {
+        backgroundColor: "#55847A",
+        borderRadius: 5,
+        flexDirection: "column",
+        justifyContent: "center",
+        margin: "auto",
+        alignSelf: "center",
+        marginTop: 30,
+        paddingHorizontal: 40,
+        paddingVertical: 15,
+    },
+    lableButton: {
+        fontFamily: 'Poppins',
+        fontStyle: "normal",
+        fontWeight: "500",
+        fontSize: 18,
+        lineHeight: 22,
+        textAlign: "center",
+        color: "#ffffff"
+    },
     nameNullTodo: {
         fontSize: 20,
         color: "#000000",
         width: "100%",
-        alignSelf:"center",
-        textAlign:"center",
-        fontWeight:"500",
-        fontFamily:'Poppins',
+        alignSelf: "center",
+        textAlign: "center",
+        fontWeight: "500",
+        fontFamily: 'Poppins',
     },
-    textInput:{
-        borderWidth:1,
-        borderColor:"#55847A",
-        borderRadius:3,
-        paddingHorizontal:15,
-        marginTop:20
+    textInput: {
+        borderWidth: 1,
+        borderColor: "#55847A",
+        borderRadius: 3,
+        paddingHorizontal: 15,
+        marginTop: 20
     }
 })

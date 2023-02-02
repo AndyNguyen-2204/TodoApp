@@ -1,7 +1,6 @@
-export type TypeCalendar={
-  minDate:string,
-  hideExtraDays:boolean,
-  showCalendar:any,
-  chooseDate:string,
-  setChooseDate:any,
+export type TypeCalendar = {
+  minDate: any,
+  showCalendar: any,
+  chooseDate: any,
+  setChooseDate: any,
 }

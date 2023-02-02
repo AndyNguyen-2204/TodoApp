@@ -34,11 +34,19 @@ export const dataFilter = [
         value: 4,
     },
     {
-        name:"Hoàn thành",
+        name: "Hoàn thành",
         value: 5,
     },
     {
-        name:"Tất cả",
+        name: "Thực hiện hôm nay",
+        value: 7,
+    },
+    {
+        name: "Thực hiện ngày mai",
+        value: 8,
+    },
+    {
+        name: "Tất cả",
         value: 6,
-    }
+    },
 ]
