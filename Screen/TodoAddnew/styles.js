@@ -43,6 +43,29 @@ export const styles = StyleSheet.create({
         width: 300,
         alignSelf:"center",
     },
+    wrapBtnChooseDate:{
+      borderWidth:1,
+      width:300,
+      alignSelf:"center",
+      marginTop:10,
+      paddingHorizontal:15,
+      paddingVertical:5,
+      borderRadius:5,
+      flexDirection:"row",
+      justifyContent:"center",
+      alignItems:"center",
+      gap:10
+    },
+    contentbtnDate:{
+        fontFamily: 'Poppins',
+        fontStyle: "normal",
+        fontWeight: "500",
+        fontSize: 15,
+        lineHeight: 22,
+        textAlign: "center",
+        color: "#000000",
+        textAlign:"center"
+    },
     wrapButton: {
         flexDirection: "row",
         alignSelf: "center",

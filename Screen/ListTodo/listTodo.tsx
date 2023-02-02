@@ -12,10 +12,12 @@ import { completedTodo,deleteTodo } from "../../Redux/ListTodoSlice/listTodo"
 import ImageBackgroundScreen from "../../src/Component/BackgroundScreen"
 import  Icon  from "react-native-vector-icons/FontAwesome"
 import Modal from "../../src/Component/Modal/modal"
+import Input from '../../src/Component/Input/input';
 const ListTodo: React.FC<ListTodos> = ({
   navigation
 }) => {
   const listTodoSlice = useSelector((state: any) => state.TodoList.data)
+  const filterBlockSlice = useSelector((state:any) => state.FilterBlock.filterBlock)
   const dispatch = useDispatch()
   const [checkboxTodo, setCheckboxTodo] = useState<string[]>([])
   const [searchvalue, setSearchValue] = useState<string>('');
@@ -25,9 +27,6 @@ const ListTodo: React.FC<ListTodos> = ({
   const[showModalDelete,setShowModalDelete]=useState<Boolean>(false)
   const[showModalNotiChooseTask,setModalNotiChooseTask]=useState<Boolean>(false)
   const[showModalCompleted,setShowModalCompleted]=useState<Boolean>(false)
-  const onChangeSearch = (text:string)=>{
-      setSearchValue(text)
-  }
   const handleCheckTodo = (e: any) => {
     if (checkboxTodo.includes(e.name as never)) {
       setCheckboxTodo(checkboxTodo.filter((el: any) => el !== e.name))
@@ -68,6 +67,7 @@ const ListTodo: React.FC<ListTodos> = ({
       setShowModalCompleted(true)
     }
   }
+
   const renderTodo = useMemo(() => {
     if (listTodo?.length > 0) {
       return (
@@ -93,12 +93,15 @@ const ListTodo: React.FC<ListTodos> = ({
     }
   }, [listTodo, checkboxTodo])
 
+// Resest filter when listTodoSlice change
   useLayoutEffect(()=>{
     setListTodo(listTodoSlice)
     setValue(0)
     setName("")
   },[listTodoSlice])
 
+
+// Filter follow status task
   useEffect(()=>{
      if(value !== 0 ){
        if(value === 1){
@@ -117,12 +120,34 @@ const ListTodo: React.FC<ListTodos> = ({
        
      }
   },[value])
+
+// Filter follow block  
+  useEffect(()=>{
+    if(filterBlockSlice !== null){
+      setValue(filterBlockSlice.value)
+      setName(filterBlockSlice.name)
+    }
+},[filterBlockSlice])
+
+// Search task
+useEffect(()=>{
+  if(searchvalue !== ""){
+    var filterTask=listTodoSlice.filter((e:any)=>{
+      return e.name.toLowerCase().indexOf(searchvalue.toLowerCase()) !== -1;
+    })
+    setListTodo(filterTask); 
+  }else{
+    setListTodo(listTodoSlice)
+  }
+ },[searchvalue])
+
   return (
     <SafeAreaView>
       <SafeAreaView style={styles.wrapListTodoScreen}>
        <ImageBackgroundScreen />
       <Text style={styles.titleScreen}>Danh sách công việc cần làm</Text>
       <Dropdown label="Lọc" data={dataFilter} value={value} setName={setName} name={name} setValue={setValue} classDropdown={styles.dropdown} classWrapvalueDropdown={styles.wrapValueDropdown} />
+      <Input placeholder="Nhập công việc cần tìm kiếm..." classesInput={styles.textInput} value={searchvalue} onChange={setSearchValue}></Input>
       {listTodo?.length > 0 ? <>
       <ScrollView >
         <View style={styles.wrapTodo}>

@@ -150,4 +150,11 @@ export const styles = StyleSheet.create({
         fontWeight:"500",
         fontFamily:'Poppins',
     },
+    textInput:{
+        borderWidth:1,
+        borderColor:"#55847A",
+        borderRadius:3,
+        paddingHorizontal:15,
+        marginTop:20
+    }
 })

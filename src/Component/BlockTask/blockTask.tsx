@@ -4,10 +4,12 @@ import {BlockTask} from "./interface"
  const BlockTaskk:React.FC<BlockTask>=({
   title,
   styleBLock,
-  quantity
+  quantity,
+  onpress,
+  value
  })=>{
   return (
-    <TouchableOpacity style={styleBLock}>
+    <TouchableOpacity style={styleBLock} onPress={()=>onpress(title,value)}>
     <Text style={styles.content}>{title}</Text>
     <Text style={[styles.content, styles.number]}>{quantity} task</Text>
   </TouchableOpacity>

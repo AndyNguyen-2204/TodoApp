@@ -7,11 +7,27 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import {dataFilter} from "../TodoAddnew/dataStatusTodo"
 import BlockTaskk from '../../src/Component/BlockTask/blockTask'
 import {renderColorBlock} from "./helperFunction"
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
+import {filterBLock} from "../../Redux/FilterBlockSlice/filterBlock"
 const Home: React.FC<TypeHomeScreen> = ({
   navigation
 }) => {
     const listTodoSlice = useSelector((state: any) => state.TodoList.data)
+    const dispatch=useDispatch()
+    const handelFilterBlock = (name:string,value:number) => {
+      dispatch(filterBLock({
+        name,
+        value
+      }))
+      navigation.navigate("ListTodo")
+    }
+    const renderBlockTask =useMemo(()=>{
+      return (
+        dataFilter.map((el:any,index:number) =>
+      <BlockTaskk key={index} title={el.name} quantity={renderQuantityTypeTask(el.value)} styleBLock={renderColorBlock(el.value)} onpress={handelFilterBlock} value={el.value}/>
+      )
+      )
+    },[listTodoSlice])
     function renderQuantityTypeTask (numberType:number){
     if(numberType===1){
       return listTodoSlice.filter((e:any)=>e.value === 1 && e.status==="Processing").length
@@ -27,13 +43,6 @@ const Home: React.FC<TypeHomeScreen> = ({
       return listTodoSlice.length
     }
   }
-  const renderBlockTask =useMemo(()=>{
-    return (
-      dataFilter.map((el:any,index:number)=>
-    <BlockTaskk key={index} title={el.name} quantity={renderQuantityTypeTask(el.value)} styleBLock={renderColorBlock(el.value)}/>
-    )
-    )
-  },[listTodoSlice])
   return (
     <SafeAreaView style={styles.wrapHomeScreen}>
       <ScrollView>
