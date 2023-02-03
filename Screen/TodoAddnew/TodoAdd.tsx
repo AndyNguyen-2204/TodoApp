@@ -13,6 +13,7 @@ import Modal from '../../src/Component/Modal/modal';
 import RenderCalendar from '../../src/Component/Calender/calendar';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import moment from "moment";
+import { regex } from "../../src/Component/FunctionHelper/functionHelper";
 const TodoAdd: React.FC<TodoAddType> = ({
   navigation
 }) => {
@@ -32,6 +33,18 @@ const TodoAdd: React.FC<TodoAddType> = ({
   }
   const handelCloseModal = () => {
     setShowModal(false)
+  }
+  const handelCheckRegexValue=(text:string)=>{
+    // console.log(text);
+    
+    // let kq = regex.test(text);
+    //  if(kq){
+    //   setValueInput(text)
+    //  }else{
+    //   console.log(2);
+      
+    //  }
+    setValueInput(text)
   }
   const addNewTodo = () => {
     if (name !== "" && value !== 0 && chooseDate !== "") {
@@ -56,7 +69,7 @@ const TodoAdd: React.FC<TodoAddType> = ({
         <ImageBackgroundScreen />
         <View>
           <Image style={styles.image} source={require("../../Asset/Images/imgAddScr.png")} />
-          <Input placeholder="Nhập công việc mới" classesInput={styles.textInput} value={valueInput} onChange={setValueInput}></Input>
+          <Input placeholder="Nhập công việc mới" classesInput={styles.textInput} value={valueInput} onChange={handelCheckRegexValue}></Input>
           <Dropdown label="Chọn trạng thái công việc" data={data} value={value} setName={setName} name={name} setValue={setValue} classDropdown={styles.dropdown} classWrapvalueDropdown={styles.wrapValueDropdown} />
         </View>
         <TouchableOpacity style={styles.wrapBtnChooseDate} onPress={() => setShowCalendar(true)}>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import WelcomeScreen from "./Screen/WelcomeScreen/welcomeScreen"
 import { store } from './Redux/store'
 import { Provider } from 'react-redux'
-import TabNavigate from "./Navigation/TabNavigate/tabNavigate"
+import TabNavigate from "./src/Component/Navigation/TabNavigate/tabNavigate"
 function App(): JSX.Element {
   const [showWelcomeScreen,setShowWelcomeScreen]=useState<Boolean>(true)
   setInterval(hideWelcomeScreen,2000)

@@ -16,7 +16,7 @@ const Home: React.FC<TypeHomeScreen> = ({
   const listTodoSlice = useSelector((state: any) => state.TodoList.data)
   const dispatch = useDispatch()
   const today = new Date();
-  const yesterday = new Date().setDate(new Date().getDate() + 1)
+  const tomorrow = new Date().setDate(new Date().getDate() + 1)
   const handelFilterBlock = (name: string, value: number) => {
     dispatch(filterBLock({
       name,
@@ -47,18 +47,18 @@ const Home: React.FC<TypeHomeScreen> = ({
     } else if (numberType === 7) {
       return listTodoSlice.filter((e: any) => e.date === moment(today.toString()).format("DD-MM-YYYY")).length
     } else if (numberType === 8) {
-      return listTodoSlice.filter((e: any) => e.date === moment(yesterday.toString()).format("DD-MM-YYYY")).length
+      return listTodoSlice.filter((e: any) => e.date === moment(tomorrow).format("DD-MM-YYYY")).length
     }
   }
   return (
-    <SafeAreaView style={styles.wrapHomeScreen}>
-      <ScrollView>
-        <View style={styles.wrapAllcontent}>
+    <ScrollView>
+      <SafeAreaView style={styles.wrapHomeScreen}>
+       <View style={styles.wrapAllcontent}>
           {renderBlockTask}
         </View>
         <Button title='Thêm công việc mới' classesButton={styles.button} classLable={styles.lableButton} onpress={() => { navigation.navigate("Add new") }} icon={<Icon name='plus' size={15} color="#ffffff" />} />
-      </ScrollView>
     </SafeAreaView>
+    </ScrollView>
   )
 }
 

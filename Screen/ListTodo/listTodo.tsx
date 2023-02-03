@@ -29,7 +29,7 @@ const ListTodo: React.FC<ListTodos> = ({
   const [showModalNotiChooseTask, setModalNotiChooseTask] = useState<Boolean>(false)
   const [showModalCompleted, setShowModalCompleted] = useState<Boolean>(false)
   const today = new Date();
-  const yesterday = new Date().setDate(new Date().getDate() + 1)
+  const tomorrow = new Date().setDate(new Date().getDate() + 1)
   const handleCheckTodo = (e: any) => {
     if (checkboxTodo.includes(e.name as never)) {
       setCheckboxTodo(checkboxTodo.filter((el: any) => el !== e.name))
@@ -125,9 +125,8 @@ const ListTodo: React.FC<ListTodos> = ({
       } else if (value === 7) {
         setListTodo(listTodoSlice.filter((e: any) => e.date === moment(today.toString()).format("DD-MM-YYYY")))
       } else if (value === 8) {
-        setListTodo(listTodoSlice.filter((e: any) => e.date === moment(yesterday.toString()).format("DD-MM-YYYY")))
+        setListTodo(listTodoSlice.filter((e: any) => e.date === moment(tomorrow).format("DD-MM-YYYY")))
       }
-
     }
   }, [value])
 
