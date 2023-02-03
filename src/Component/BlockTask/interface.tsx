@@ -3,5 +3,6 @@ export type BlockTask={
    title:string,
    onpress?:any,
    styleBLock:any,
-   value:number
+   value:number,
+   backgroundColor:string
 }

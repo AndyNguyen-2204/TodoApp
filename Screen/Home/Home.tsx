@@ -6,7 +6,6 @@ import { TypeHomeScreen } from "./interface"
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { dataFilter } from "../TodoAddnew/dataStatusTodo"
 import BlockTaskk from '../../src/Component/BlockTask/blockTask'
-import { renderColorBlock } from "./helperFunction"
 import { useSelector, useDispatch } from 'react-redux'
 import { filterBLock } from "../../Redux/FilterBlockSlice/filterBlock"
 import moment from 'moment'
@@ -27,7 +26,7 @@ const Home: React.FC<TypeHomeScreen> = ({
   const renderBlockTask = useMemo(() => {
     return (
       dataFilter.map((el: any, index: number) =>
-        <BlockTaskk key={index} title={el.name} quantity={renderQuantityTypeTask(el.value)} styleBLock={renderColorBlock(el.value)} onpress={handelFilterBlock} value={el.value} />
+        <BlockTaskk key={index} title={el.name} quantity={renderQuantityTypeTask(el.value)} styleBLock={styles.wrapbox} backgroundColor={el.color} onpress={handelFilterBlock} value={el.value} />
       )
     )
   }, [listTodoSlice])

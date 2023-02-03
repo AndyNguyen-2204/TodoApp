@@ -6,7 +6,6 @@ import { useState, useMemo, useLayoutEffect, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { styles } from "./style"
 import { renderStatusTodo, renderColorStatus } from "./helperFunction"
-import { Searchbar } from 'react-native-paper';
 import Button from "../../src/Component/Button/button"
 import { completedTodo, deleteTodo } from "../../Redux/ListTodoSlice/listTodo"
 import ImageBackgroundScreen from "../../src/Component/BackgroundScreen"

@@ -6,10 +6,11 @@ import {BlockTask} from "./interface"
   styleBLock,
   quantity,
   onpress,
-  value
+  value,
+  backgroundColor
  })=>{
   return (
-    <TouchableOpacity style={styleBLock} onPress={()=>onpress(title,value)}>
+    <TouchableOpacity style={[{backgroundColor:`${backgroundColor}`},[styleBLock]]}  onPress={()=>onpress(title,value)}>
     <Text style={styles.content}>{title}</Text>
     <Text style={[styles.content, styles.number]}>{quantity} task</Text>
   </TouchableOpacity>

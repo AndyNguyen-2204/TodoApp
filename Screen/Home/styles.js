@@ -39,30 +39,6 @@ export const styles = StyleSheet.create({
     borderBottomLeftRadius: 35,
     borderBottomRightRadius: 55
   },
-  type1: {
-    backgroundColor: "#ff0000"
-  },
-  type2: {
-    backgroundColor: "#ff4500"
-  },
-  type3: {
-    backgroundColor: "#ffff00"
-  },
-  type4: {
-    backgroundColor: "#9acd32"
-  },
-  type5: {
-    backgroundColor: "#CC99FF"
-  },
-  type6: {
-    backgroundColor: "#FFFACD"
-  },
-  type7: {
-    backgroundColor: "#33CCFF"
-  },
-  type8: {
-    backgroundColor: "#F4A460"
-  },
   button: {
     backgroundColor: "#55847A",
     borderRadius: 5,
