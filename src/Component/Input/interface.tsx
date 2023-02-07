@@ -2,5 +2,8 @@ export type TypeInput = {
   placeholder: string;
   classesInput?: any;
   onChange?: any,
-  value: string
+  value: string,
+  numberOfLines?:number,
+  multiline:boolean,
+  placeholderTextColor?:string
 }
