@@ -3,7 +3,4 @@ export type TypeInput = {
   classesInput?: any;
   onChange?: any,
   value: string,
-  numberOfLines?:number,
-  multiline:boolean,
-  placeholderTextColor?:string
 }

@@ -59,7 +59,7 @@ const TodoAdd: React.FC<TodoAddType> = ({
         <ImageBackgroundScreen />
         <View>
           <Image style={styles.image} source={require("../../Asset/Images/imgAddScr.png")} />
-          <Input  placeholder="Nhập công việc mới" classesInput={styles.textInput} value={valueInput} onChange={handelCheckRegexValue} multiline={true} numberOfLines={10}></Input>
+          <Input  placeholder="Nhập công việc mới" classesInput={styles.textInput} value={valueInput} onChange={handelCheckRegexValue}></Input>
           <Dropdown label="Chọn trạng thái công việc" data={data} value={value} setName={setName} name={name} setValue={setValue} classDropdown={styles.dropdown} classWrapvalueDropdown={styles.wrapValueDropdown} />
         </View>
         <TouchableOpacity style={styles.wrapBtnChooseDate} onPress={() => setShowCalendar(true)}>

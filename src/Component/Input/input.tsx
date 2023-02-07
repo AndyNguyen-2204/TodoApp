@@ -6,19 +6,9 @@ const Input: React.FC<TypeInput> = ({
   classesInput,
   onChange,
   value,
-  placeholderTextColor,
-  multiline,
-  numberOfLines
 }) => {
   return (
-    <TextInput 
-    style={classesInput} placeholder={placeholder} 
-    placeholderTextColor={placeholderTextColor}
-    value={value}
-    numberOfLines={numberOfLines}
-    multiline={multiline} 
-    onChangeText={(text) => onChange(text)} 
-    />
+    <TextInput style={classesInput} placeholder={placeholder} value={value} onChangeText={(text) => onChange(text)} />
   )
 }
 
